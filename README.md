@@ -13,7 +13,7 @@ A segmentação por VLANs aplicada neste projeto não apenas otimiza o tráfego 
 
 ## 🏗️ Arquitetura e Topologia
 
-![Diagrama da Topologia](C:\Users\Guilherme\Documents\FIAP-OSCN\VLAN-RouterOnAStick\topologia.png)`
+![Diagrama da Topologia](topologia.png)
 
 ### Tabela de Endereçamento e VLANs
 | VLAN | Nome | Rede | Máscara | Gateway Padrão |
