@@ -1,0 +1,42 @@
+! --- CONFIGURACAO DO SWITCH SW01 ---
+!
+! Criacao e Nomeacao das VLANs
+vlan 10
+ name ADMIN
+vlan 20
+ name FINANCEIRO
+vlan 30
+ name RH
+vlan 40
+ name TI
+!
+! Configuracao das Portas de Acesso
+interface FastEthernet0/1
+ switchport mode access
+ switchport access vlan 10
+!
+interface FastEthernet0/2
+ switchport mode access
+ switchport access vlan 20
+!
+interface FastEthernet0/3
+ switchport mode access
+ switchport access vlan 30
+!
+interface FastEthernet0/4
+ switchport mode access
+ switchport access vlan 40
+!
+! Configuracao das Portas Trunk (Para o Roteador e SW02)
+interface GigabitEthernet0/1
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20,30,40
+!
+interface GigabitEthernet0/2
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20,30,40
+!
+! Configuracao do Spanning Tree (Principal/Root)
+spanning-tree mode rapid-pvst
+spanning-tree vlan 10,20,30,40 priority 4096
+!
